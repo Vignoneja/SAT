@@ -344,6 +344,7 @@
     <Content Include="Content\assets\images\sprites\logo-mini.svg" />
     <Content Include="Content\assets\images\sprites\red.png" />
     <Content Include="Content\assets\images\sprites\yellow.png" />
+    <Content Include="Content\assets\images\logo.png" />
     <Content Include="Content\assets\js\ace.js" />
     <Content Include="Content\assets\js\alerts.js" />
     <Content Include="Content\assets\js\avgrund.js" />
