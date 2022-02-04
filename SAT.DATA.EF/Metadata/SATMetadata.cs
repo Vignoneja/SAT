@@ -53,7 +53,7 @@ namespace SAT.DATA.EF//.Metadata
         [StringLength(100, ErrorMessage = "* Cannot exceed 100 characters")]
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
         [Display(Name = "Photo URL")]
-        public string PhotoURL { get; set; }
+        public string PhotoUrl { get; set; }
 
         //public int SSID { get; set; }
     }
@@ -172,7 +172,7 @@ namespace SAT.DATA.EF//.Metadata
     }
     #endregion
     
-    #region Courses Status Metadata
+    #region Courses Metadata
     public class CourseMetadata
     {
         //public int CourseId { get; set; }
@@ -192,7 +192,7 @@ namespace SAT.DATA.EF//.Metadata
         public int CreditHours { get; set; }
 
         [StringLength(250, ErrorMessage = "* Cannot exceed 250 characters")]
-        public string Cirriculum { get; set; }
+        public string Curriculum { get; set; }
 
         [StringLength(500, ErrorMessage = "* Cannot exceed 500 characters")]
         public string Notes { get; set; }
