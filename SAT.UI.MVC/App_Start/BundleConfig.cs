@@ -22,9 +22,31 @@ namespace SAT.UI.MVC
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/SiteJS").Include(
+                      "~/Content/assets/vendors/chart.js/Chart.min.js",
+                      "~/Content/assets/vendors/progressbar.js/progressbar.min.js",
+                      "~/Content/assets/vendors/jvectormap/jquery-jvectormap.min.js",
+                      "~/Content/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js",
+                      "~/Content/assets/vendors/owl-carousel-2/owl.carousel.min.js",
+                      "~/Content/assets/js/off-canvas.js",
+                      "~/Content/assets/js/hoverable-collapse.js",
+                      "~/Content/assets/js/misc.js",
+                      "~/Content/assets/js/settings.js",
+                      "~/Content/assets/js/todolist.js",
+                      "~/Content/assets/js/dashboard.js"
+                      ));
+
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
+                      "~/Content/assets/vendors/mdi/css/materialdesignicons.min.css",
+                      "~/Content/assets/vendors/css/vendor.bundle.base.css",
+                      "~/Content/assets/vendors/jvectormap/jquery-jvectormap.css",
+                      "~/Content/assets/vendors/flag-icon-css/css/flag-icon.min.css",
+                      "~/Content/assets/vendors/owl-carousel-2/owl.carousel.min.css",
+                      "~/Content/assets/vendors/owl-carousel-2/owl.theme.default.min.css",
+                      "~/Content/assets/css/style.css",
+                      "~/Content/Site.css"));
+
+
         }
     }
 }
