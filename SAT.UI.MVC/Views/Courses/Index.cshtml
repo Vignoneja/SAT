@@ -54,12 +54,12 @@
                     @Html.DisplayFor(modelItem => item.IsActive)
                 </td>*@
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CourseId })
-                @if (true)
-                {
                     <div class="btn btn-danger">
                         @Html.ActionLink("Details", "Details", new { id = item.CourseId })
                     </div>
+                @if (User.IsInRole("Admin"))
+                {
+                @Html.ActionLink("Edit", "Edit", new { id = item.CourseId })
                     <div class="btn btn-danger">
                         @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
                     </div>
