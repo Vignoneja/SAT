@@ -11,60 +11,57 @@ using SAT.DATA.EF;
 namespace SAT.UI.MVC.Controllers
 {
     [Authorize]
-    public class StudentsController : Controller
+    public class CoursesController : Controller
     {
         private SATEntities db = new SATEntities();
 
-        // GET: Students
+        // GET: Courses
         public ActionResult Index()
         {
-            var students = db.Students.Include(s => s.StudentStatus);
-            return View(students.ToList());
+            return View(db.Courses.ToList());
         }
 
-        // GET: Students/Details/5
+        // GET: Courses/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            Course course = db.Courses.Find(id);
+            if (course == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(course);
         }
 
-        // GET: Students/Create
+        // GET: Courses/Create
         [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
-            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName");
             return View();
         }
 
-        // POST: Students/Create
+        // POST: Courses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
+        public ActionResult Create([Bind(Include = "CourseId,CourseName,CourseDescription,CreditHours,Curriculum,Notes,IsActive")] Course course)
         {
             if (ModelState.IsValid)
             {
-                db.Students.Add(student);
+                db.Courses.Add(course);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
-            return View(student);
+            return View(course);
         }
 
-        // GET: Students/Edit/5
+        // GET: Courses/Edit/5
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
@@ -72,34 +69,32 @@ namespace SAT.UI.MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            Course course = db.Courses.Find(id);
+            if (course == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
-            return View(student);
+            return View(course);
         }
 
-        // POST: Students/Edit/5
+        // POST: Courses/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
+        public ActionResult Edit([Bind(Include = "CourseId,CourseName,CourseDescription,CreditHours,Curriculum,Notes,IsActive")] Course course)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(student).State = EntityState.Modified;
+                db.Entry(course).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
-            return View(student);
+            return View(course);
         }
 
-        // GET: Students/Delete/5
+        // GET: Courses/Delete/5
         [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
@@ -107,22 +102,22 @@ namespace SAT.UI.MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            Course course = db.Courses.Find(id);
+            if (course == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(course);
         }
 
-        // POST: Students/Delete/5
+        // POST: Courses/Delete/5
         [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Student student = db.Students.Find(id);
-            db.Students.Remove(student);
+            Course course = db.Courses.Find(id);
+            db.Courses.Remove(course);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
