@@ -1,69 +1,50 @@
 ﻿@model SAT.DATA.EF.Course
 
 @{
-    ViewBag.Title = "Are you sure you want to delete " + Model.CourseName + "?";
+    ViewBag.Title = "Delete: " + Model.CourseName;
 }
 
-<h2>@ViewBag.Title</h2>
+<div class="card card-body max1000">
+    <h2 class="text-center pb-2">@ViewBag.Title</h2>
+    <dl class="dl-horizontal">
+        <div class="p-5">
+            <dd>
+                <span class="font-weight-bold pr-2">Course Name:</span>  @Html.DisplayFor(model => model.CourseName)
+            </dd>
+            <dd>
+                <span class="font-weight-bold pr-2">Description:</span>   @Html.DisplayFor(model => model.CourseDescription)
+            </dd>
+            <dd>
+                <span class="font-weight-bold pr-2">Credit Hours:</span>  @Html.DisplayFor(model => model.CreditHours)
+            </dd>
+            <dd>
+                <span class="font-weight-bold pr-2">Curriculum:</span>   @Html.DisplayFor(model => model.Curriculum)
+            </dd>
+            <dd>
+                <span class="font-weight-bold pr-2">Is Active:</span>
+                <span>@(Model.IsActive == true ? "Yes" : "No")</span>
+            </dd>
 
-<div>    
-    @*<dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CourseName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CourseDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreditHours)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreditHours)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Curriculum)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Curriculum)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-
-    </dl>*@
-
-    @using (Html.BeginForm()) {
+            @if (Model.Notes != null)
+            {
+                <dd>
+                    @Html.DisplayNameFor(model => model.Notes)
+                </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Notes)
+                </dd>
+            }
+        </div>
+        <h3 class="text-center text-danger">Are you sure you want to delete: <span class="font-italic"> @Model.CourseName</span>?</h3>
+    </dl>
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> |            
-            @Html.ActionLink("Cancel", "Index")
+        <div class="form-actions no-color text-center">
+            <input type="submit" value="Delete" class="btn btn-primary btn80" />
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80" })
+            @Html.ActionLink("Cancel", "Index", "Courses", new { @class = "btn btn-primary btn80" })
         </div>
     }
 </div>

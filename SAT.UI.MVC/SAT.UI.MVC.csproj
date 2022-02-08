@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataTables.AspNet.Core, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataTables.AspNet.Core.2.0.2\lib\net45\DataTables.AspNet.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -349,6 +352,8 @@
     <Content Include="Content\assets\images\sprites\red.png" />
     <Content Include="Content\assets\images\sprites\yellow.png" />
     <Content Include="Content\assets\images\logo.png" />
+    <Content Include="Content\assets\images\students\noImage.png" />
+    <Content Include="Content\assets\images\students\t_noImage.jpg" />
     <Content Include="Content\assets\js\ace.js" />
     <Content Include="Content\assets\js\alerts.js" />
     <Content Include="Content\assets\js\avgrund.js" />

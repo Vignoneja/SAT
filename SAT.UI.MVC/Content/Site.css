@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-}
+  }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -40,3 +40,42 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.max1000{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.max90p{
+    max-width: 90%;
+    height: auto;
+}
+
+a.btn80, input.btn80{
+    min-width: 80px;
+    margin: 3px;
+    padding: .65em;
+}
+
+div.inFix input, div.inFix select, div.inFix textarea {
+    max-width: unset;
+}
+
+
+.table-striped td, .table-striped th {
+    font-size: 1rem;
+}
+
+
+
+/*----testing alt styling for more dynamic look.----*/
+.content-wrapper {
+    background: #93abae !important;
+}
+
+.card {
+    box-shadow: 8px 8px 12px 2px #383737;
+}
+
+ 

@@ -192,9 +192,11 @@ namespace SAT.DATA.EF//.Metadata
         [Display(Name = "Credit Hours")]
         public int CreditHours { get; set; }
 
+        [UIHint("MultilineText")]
         [StringLength(250, ErrorMessage = "* Cannot exceed 250 characters")]
         public string Curriculum { get; set; }
 
+        [UIHint("MultilineText")]
         [StringLength(500, ErrorMessage = "* Cannot exceed 500 characters")]
         public string Notes { get; set; }
 
