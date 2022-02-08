@@ -25,11 +25,10 @@
                 <span class="font-weight-bold pr-2">Is Active:</span>
                 <span>@(Model.IsActive == true ? "Yes" : "No")</span>
             </dd>
-
             @if (Model.Notes != null)
             {
                 <dd>
-                    @Html.DisplayNameFor(model => model.Notes)
+                    @Html.DisplayNameFor(model => model.Notes):
                 </dd>
                 <dd>
                     @Html.DisplayFor(model => model.Notes)
