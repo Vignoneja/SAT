@@ -10,121 +10,118 @@ using SAT.DATA.EF;
 
 namespace SAT.UI.MVC.Controllers
 {
-    
-    public class StudentsController : Controller
+    [Authorize(Roles = "Admin,Scheduler")]
+    public class EnrollmentsController : Controller
     {
         private SATEntities db = new SATEntities();
 
-        // GET: Students
-        [Authorize(Roles = "Admin,Scheduler")]
+        // GET: Enrollments
+
         public ActionResult Index()
         {
-            var students = db.Students.Include(s => s.StudentStatus);
-            return View(students.ToList());
+            var enrollments = db.Enrollments.Include(e => e.ScheduledClass).Include(e => e.Student);
+            return View(enrollments.ToList());
         }
 
-        // GET: Students/Details/5
-        [Authorize(Roles = "Admin,Scheduler")]
+        // GET: Enrollments/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            Enrollment enrollment = db.Enrollments.Find(id);
+            if (enrollment == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(enrollment);
         }
 
-        // GET: Students/Create
-        [Authorize(Roles = "Admin")]
+        // GET: Enrollments/Create
         public ActionResult Create()
         {
-            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName");
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "ScheduledClassSummary");
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FullName");
             return View();
         }
 
-        // POST: Students/Create
+        // POST: Enrollments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
+        public ActionResult Create([Bind(Include = "EnrollmentId,StudentId,ScheduledClassId,EnrollmentDate")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
-                db.Students.Add(student);
+                db.Enrollments.Add(enrollment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
-            return View(student);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "ScheduledClassSummary", enrollment.ScheduledClassId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FullName", enrollment.StudentId);
+            return View(enrollment);
         }
 
-        // GET: Students/Edit/5
-        [Authorize(Roles = "Admin")]
+        // GET: Enrollments/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            Enrollment enrollment = db.Enrollments.Find(id);
+            if (enrollment == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
-            return View(student);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "ScheduledClassSummary", enrollment.ScheduledClassId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FullName", enrollment.StudentId);
+            return View(enrollment);
         }
 
-        // POST: Students/Edit/5
+        // POST: Enrollments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
+        public ActionResult Edit([Bind(Include = "EnrollmentId,StudentId,ScheduledClassId,EnrollmentDate")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(student).State = EntityState.Modified;
+                db.Entry(enrollment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
-            return View(student);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "ScheduledClassSummary", enrollment.ScheduledClassId);
+            ViewBag.StudentId = new SelectList(db.Students, "StudentId", "FullName", enrollment.StudentId);
+            return View(enrollment);
         }
 
-        // GET: Students/Delete/5
-        [Authorize(Roles = "Admin")]
+        // GET: Enrollments/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            Enrollment enrollment = db.Enrollments.Find(id);
+            if (enrollment == null)
             {
                 return HttpNotFound();
             }
-            return View(student);
+            return View(enrollment);
         }
 
-        // POST: Students/Delete/5
-        [Authorize(Roles = "Admin")]
+        // POST: Enrollments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Student student = db.Students.Find(id);
-            db.Students.Remove(student);
+            Enrollment enrollment = db.Enrollments.Find(id);
+            db.Enrollments.Remove(enrollment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

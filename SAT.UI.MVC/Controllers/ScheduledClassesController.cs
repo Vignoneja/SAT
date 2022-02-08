@@ -10,12 +10,13 @@ using SAT.DATA.EF;
 
 namespace SAT.UI.MVC.Controllers
 {
-    [Authorize]
+    
     public class ScheduledClassesController : Controller
     {
         private SATEntities db = new SATEntities();
 
         // GET: ScheduledClasses
+        [Authorize(Roles = "Admin,Scheduler")]
         public ActionResult Index()
         {
             var scheduledClasses = db.ScheduledClasses.Include(s => s.Course).Include(s => s.ScheduledClassStatus);
@@ -23,6 +24,7 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Details/5
+        [Authorize(Roles = "Admin,Scheduler")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,7 +39,7 @@ namespace SAT.UI.MVC.Controllers
             return View(scheduledClass);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Scheduler")]
         // GET: ScheduledClasses/Create
         public ActionResult Create()
         {
@@ -49,7 +51,7 @@ namespace SAT.UI.MVC.Controllers
         // POST: ScheduledClasses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Scheduler")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ScheduledClassId,CourseId,StartDate,EndDate,InstructorName,Location,SCSID")] ScheduledClass scheduledClass)
@@ -67,7 +69,7 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Edit/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Scheduler")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -87,7 +89,7 @@ namespace SAT.UI.MVC.Controllers
         // POST: ScheduledClasses/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,Scheduler")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ScheduledClassId,CourseId,StartDate,EndDate,InstructorName,Location,SCSID")] ScheduledClass scheduledClass)

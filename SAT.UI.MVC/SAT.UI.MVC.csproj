@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
@@ -976,6 +977,11 @@
     <Content Include="Views\ScheduledClasses\Details.cshtml" />
     <Content Include="Views\ScheduledClasses\Edit.cshtml" />
     <Content Include="Views\ScheduledClasses\Index.cshtml" />
+    <Content Include="Views\Enrollments\Create.cshtml" />
+    <Content Include="Views\Enrollments\Delete.cshtml" />
+    <Content Include="Views\Enrollments\Details.cshtml" />
+    <Content Include="Views\Enrollments\Edit.cshtml" />
+    <Content Include="Views\Enrollments\Index.cshtml" />
     <None Include="Views\Shared\_footer.cshtml" />
     <None Include="Views\Shared\_navbar.cshtml" />
     <None Include="Views\Shared\_sidebar.cshtml" />

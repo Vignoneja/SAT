@@ -127,7 +127,8 @@ namespace SAT.DATA.EF//.Metadata
     [MetadataType(typeof(ScheduledClassMetadata))]
     public partial class ScheduledClass
     {
-
+        [Display(Name = "Class Summary")]
+        public string ScheduledClassSummary => $"{StartDate:d} - {Course.CourseName} - {Location}";
     }
     #endregion
 
