@@ -4,44 +4,30 @@
     ViewBag.Title = "Delete Enrollment for " + Model.Student.FullName;
 }
 
-<h2>@ViewBag.Title</h2>
-
-<h3>Are you sure you want to delete enrollment for @Model.Student.FullName?</h3>
-<div>
-    
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EnrollmentDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EnrollmentDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ScheduledClass.InstructorName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ScheduledClass.InstructorName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Student.FullName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Student.FullName)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
+<div class="card card-body p-5 max800 drop">
+    <h2 class="text-center pb-4">@ViewBag.Title</h2>
+    <div class="divCenter">
+        <dl class="dl-horizontal p-5">
+            <dd>
+                <span class="font-weight-bold pr-2">Name:</span> @Html.DisplayFor(model => model.Student.FullName)
+            </dd>
+            <dd>
+                <span class="font-weight-bold pr-2">Enrollment Date:</span> @Html.DisplayFor(model => model.EnrollmentDate)
+            </dd>
+            <dd>
+                <span class="font-weight-bold pr-2">Instructor:</span> @Html.DisplayFor(model => model.ScheduledClass.InstructorName)
+            </dd>
+        </dl>
+    </div>
+    <h3 class="text-center text-danger pb-4">Are you sure you want to delete: <span class="font-italic"> @Model.Student.FullName</span>?</h3>
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-inverse-danger" /> |
-            @Html.ActionLink("Cancel", "Index")
+        <div class="form-actions no-color text-center">
+            <input type="submit" value="Yes" class="btn btn-primary btn80" />
+            @*@Html.ActionLink("No", "Index", "StudentStatuses", new { @class = "btn btn-primary btn80" })*@
+            <a href="javascript:void(0);" onclick="history.go(-1);" class="btn btn-primary btn80 mr-0">No</a>
         </div>
     }
 </div>

@@ -4,7 +4,7 @@
     ViewBag.Title = "Details Of " + Model.FullName;
 }
 
-<div class="card card-body max1000">
+<div class="card card-body max1000 drop">
     <h2 class="text-center pb-2">@ViewBag.Title</h2>
     <dl class="dl-horizontal">
         <div class="row p-5">
@@ -47,7 +47,8 @@
                 @Html.ActionLink("Edit", "Edit", "Students", new { id = Model.StudentId }, new { @class = "btn btn-primary btn80" })
                 @Html.ActionLink("Delete", "Delete", "Students", new { id = Model.StudentId }, new { @class = "btn btn-primary btn80 ml-2" })
             }
-            @Html.ActionLink("Return", "Index", "Students", new { @class = "btn btn-primary btn80" })
+            @*@Html.ActionLink("Return", "Index", "Students", new { @class = "btn btn-primary btn80" })*@
+            <a href="javascript:void(0);" onclick="history.go(-1);" class="btn btn-primary btn80 mr-0">Return</a>
         </p>
 
     </dl>

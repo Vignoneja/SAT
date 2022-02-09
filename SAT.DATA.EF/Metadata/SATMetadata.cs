@@ -128,6 +128,9 @@ namespace SAT.DATA.EF//.Metadata
     {
         [Display(Name = "Class Summary")]
         public string ScheduledClassSummary => $"{StartDate:d} - {Course.CourseName} - {Location}";
+
+        [Display(Name = "Class Summary")]
+        public string ScheduledClassDesc => $"{Course.CourseName} ({StartDate:d}-{EndDate:d})";
     }
     #endregion
 
@@ -141,6 +144,7 @@ namespace SAT.DATA.EF//.Metadata
         [Display(Name = "Status")]
         public string SSName { get; set; }
 
+        [UIHint("MultilineText")]
         [StringLength(250, ErrorMessage = "* Cannot exceed 250 characters")]
         [Display(Name = "Description")]
         [DisplayFormat(NullDisplayText = "[-N/A-]")]

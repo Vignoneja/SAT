@@ -5,9 +5,9 @@
 }
 
 
-<div class="max1000">
-    <div class="card card-body">
-        <h2 class="text-center pb-2">@ViewBag.Title</h2>
+<div class="card card-body max800 drop">
+    <h2 class="text-center pb-2">@ViewBag.Title</h2>
+    <div class="divCenter">
         <dl class="dl-horizontal p-5">
             <dd>
                 <span class="font-weight-bold pr-2">Course Name:</span>  @Html.DisplayFor(model => model.CourseName)
@@ -35,13 +35,15 @@
                 </dd>
             }
         </dl>
-        <p class="text-right pr-5">
-            @if (User.IsInRole("Admin"))
-            {
-                @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80"})
-                @Html.ActionLink("Delete", "Delete", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80 ml-2" })
-            }
-            @Html.ActionLink("Cancel", "Index", "Courses", new { @class = "btn btn-primary btn80" })
-        </p>
     </div>
+    <p class="text-center">
+        @if (User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80" })
+            @Html.ActionLink("Delete", "Delete", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80 ml-2" })
+        }
+        @*@Html.ActionLink("Return", "Index", "Courses", new { @class = "btn btn-primary btn80" })*@
+        <a href="javascript:void(0);" onclick="history.go(-1);" class="btn btn-primary btn80 mr-0">Return</a>
+    </p>
 </div>
+
