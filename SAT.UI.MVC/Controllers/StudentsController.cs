@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using SAT.DATA.EF;
+using SAT.UI.MVC.Utilities;
 
 namespace SAT.UI.MVC.Controllers
 {
@@ -53,10 +55,47 @@ namespace SAT.UI.MVC.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
+        public ActionResult Create([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student, HttpPostedFileBase studentPhoto)
         {
             if (ModelState.IsValid)
             {
+                #region File Upload
+
+                string imageName = "noImage.jpg";
+
+                if ( studentPhoto != null)
+                {
+                    imageName = studentPhoto.FileName;
+
+                    string ext = imageName.Substring(imageName.LastIndexOf("."));
+
+                    string[] goodExts = new string[] { ".jpeg", ".jpg", ".png", ".gif" };
+
+                    if (goodExts.Contains(ext.ToLower()) && studentPhoto.ContentLength <= 4194304)
+                    {
+                        imageName = Guid.NewGuid() + ext;
+
+                        #region Resize Image Functionality
+                        string savePath = Server.MapPath("~/Content/images/products/");
+
+                        Image convertedImage = Image.FromStream(studentPhoto.InputStream);
+
+                        int maxImageSize = 300;
+
+                        int maxThumbSize = 65;
+
+                        ImageUtility.ResizeImage(savePath, imageName, convertedImage, maxImageSize, maxThumbSize);
+
+                        #endregion
+
+                    }                  
+
+                }
+
+                student.PhotoUrl = imageName;
+
+                #endregion
+
                 db.Students.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -89,10 +128,47 @@ namespace SAT.UI.MVC.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student)
+        public ActionResult Edit([Bind(Include = "StudentId,FirstName,LastName,Major,Address,City,State,ZipCode,Phone,Email,PhotoUrl,SSID")] Student student, HttpPostedFileBase studentPhoto)
         {
             if (ModelState.IsValid)
             {
+                #region File Upload
+
+                string imageName = "noImage.jpg";
+
+                if (studentPhoto != null)
+                {
+                    imageName = studentPhoto.FileName;
+
+                    string ext = imageName.Substring(imageName.LastIndexOf("."));
+
+                    string[] goodExts = new string[] { ".jpeg", ".jpg", ".png", ".gif" };
+
+                    if (goodExts.Contains(ext.ToLower()) && studentPhoto.ContentLength <= 4194304)
+                    {
+                        imageName = Guid.NewGuid() + ext;
+
+                        #region Resize Image Functionality
+                        string savePath = Server.MapPath("~/Content/images/products/");
+
+                        Image convertedImage = Image.FromStream(studentPhoto.InputStream);
+
+                        int maxImageSize = 300;
+
+                        int maxThumbSize = 65;
+
+                        ImageUtility.ResizeImage(savePath, imageName, convertedImage, maxImageSize, maxThumbSize);
+
+                        #endregion
+
+                    }
+
+                }
+
+                student.PhotoUrl = imageName;
+
+                #endregion
+
                 db.Entry(student).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
