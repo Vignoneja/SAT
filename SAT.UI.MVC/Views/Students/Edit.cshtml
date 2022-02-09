@@ -9,7 +9,7 @@
 <div class="card card-body max1000">
     <h2 class="text-center pb-2">@ViewBag.Title</h2>
     <div class="row p-5">
-        @using (Html.BeginForm("Create", "Students", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Edit", "Students", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
 

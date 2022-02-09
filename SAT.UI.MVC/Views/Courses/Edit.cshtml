@@ -58,8 +58,14 @@
                 </div>
                 <div class="form-group mb-0">
                     <div class="text-right col-md-12 p-0 pt-4">
+
                         <input type="submit" value="Save" class="btn btn-primary btn80" />
-                        @Html.ActionLink("Delete", "Delete", "Courses", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80" })
+
+                        @if (Model.IsActive)
+                        {
+                            @Html.ActionLink("Delete", "Delete", "Courses", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80" })
+                        }
+
                         @Html.ActionLink("Cancel", "Index", "Courses", new { @class = "btn btn-primary btn80 mr-0" })
                     </div>
                 </div>

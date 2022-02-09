@@ -41,7 +41,7 @@
                 </dd>
             </div>
         </div>
-        <h3 class="text-center text-danger">Are you sure you want to delete: <span class="font-italic"> @Model.FullName</span>?</h3>
+        <h3 class="text-center text-danger">@ViewBag.Display</h3>
     </dl>
 
     @using (Html.BeginForm())
@@ -49,8 +49,7 @@
         @Html.AntiForgeryToken()
 
     <div class="form-actions no-color text-center">
-        <input type="submit" value="Delete" class="btn btn-primary btn80" />
-        @Html.ActionLink("Edit", "Edit", "Students", new { id = Model.StudentId }, new { @class = "btn btn-primary btn80" })
+        <input type="submit" value="@ViewBag.ButtonText" class="btn btn-primary btn80" />
         @Html.ActionLink("Cancel", "Index", "Students", new { @class = "btn btn-primary btn80" })
     </div>
 }

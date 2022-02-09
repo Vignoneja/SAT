@@ -1016,6 +1016,8 @@
     <Content Include="Views\Enrollments\Details.cshtml" />
     <Content Include="Views\Enrollments\Edit.cshtml" />
     <Content Include="Views\Enrollments\Index.cshtml" />
+    <Content Include="Views\Courses\Active.cshtml" />
+    <Content Include="Views\Courses\Retired.cshtml" />
     <None Include="Views\Shared\_footer.cshtml" />
     <None Include="Views\Shared\_navbar.cshtml" />
     <None Include="Views\Shared\_sidebar.cshtml" />

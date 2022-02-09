@@ -43,7 +43,6 @@ namespace SAT.DATA.EF//.Metadata
         [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
 
-        [Range(0, double.MaxValue, ErrorMessage = "* Value must be a valid number, 0 or larger")]
         [DisplayFormat(DataFormatString = "{0:###-###-####}", NullDisplayText = "[-N/A-]")]
         public string Phone { get; set; }
 

@@ -161,11 +161,11 @@ namespace SAT.UI.MVC.Controllers
 
                         #endregion
 
+                        student.PhotoUrl = imageName;
                     }
 
                 }
 
-                student.PhotoUrl = imageName;
                 #endregion
 
                 db.Entry(student).State = EntityState.Modified;
@@ -190,6 +190,23 @@ namespace SAT.UI.MVC.Controllers
             {
                 return HttpNotFound();
             }
+
+            if (student.SSID == 2)
+            {
+                ViewBag.ButtonText = "Withdraw Student";
+                ViewBag.Display = "Are you sure you want to withdraw " + student.FullName + "?";
+            }
+            else if (student.SSID == 3)
+            { 
+                ViewBag.ButtonText = "Reactivate Student";
+                ViewBag.Display = "Reactivating " + student.FullName;
+            }
+            else
+            {
+                ViewBag.ButtonText = "Edit";
+                ViewBag.Display = "For more complex statuses, please go to Edit";
+            }
+
             return View(student);
         }
 
@@ -200,7 +217,21 @@ namespace SAT.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Student student = db.Students.Find(id);
-            db.Students.Remove(student);
+            if(student.SSID == 2)
+            {
+                student.SSID = 3;
+            }
+            else if (student.SSID == 3)
+            {
+                student.SSID = 2;
+            }
+            else
+            {
+                return RedirectToAction("Edit");
+            }
+
+            //db.Students.Remove(student);
+            db.Entry(student).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

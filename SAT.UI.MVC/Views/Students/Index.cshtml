@@ -86,6 +86,8 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.PhotoUrl)
                             </td>*@
+                        
+
                         <td>
                             @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
                         </td>
@@ -96,7 +98,15 @@
                                 <span>|</span>
                                 @Html.ActionLink("Edit", "Edit", new { id = item.StudentId })
                                 <span>|</span>
-                                @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+
+                                if (item.SSID != 3)
+                                {
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+                                }
+                                else if (item.SSID == 3)
+                                {
+                                    @Html.ActionLink("Reactivate", "Delete", new { id = item.StudentId })
+                                }
                             }
                         </td>
                     </tr>

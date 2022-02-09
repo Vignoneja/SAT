@@ -19,7 +19,17 @@ namespace SAT.UI.MVC.Controllers
         // GET: Courses
         public ActionResult Index()
         {
-            return View(db.Courses.ToList());
+            return RedirectToAction("Active");
+        }
+
+        public ActionResult Active()
+        {
+            return View(db.Courses.Where(x => x.IsActive == true).ToList());
+        }
+
+        public ActionResult Retired()
+        {
+            return View(db.Courses.Where(x => x.IsActive == false).ToList());
         }
 
         // GET: Courses/Details/5
@@ -118,7 +128,10 @@ namespace SAT.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Course course = db.Courses.Find(id);
-            db.Courses.Remove(course);
+            //db.Courses.Remove(course);
+
+            course.IsActive = !course.IsActive;
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }
