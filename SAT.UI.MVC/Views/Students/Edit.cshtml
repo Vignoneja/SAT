@@ -9,7 +9,7 @@
 <div class="card card-body max1000">
     <h2 class="text-center pb-2">@ViewBag.Title</h2>
     <div class="row p-5">
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Create", "Students", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
 
@@ -21,8 +21,8 @@
 
                 <div class="row">
                     <div class="form-group col-md-4">
-                        <img src="~/Content/assets/images/students/@Model.PhotoUrl" id="studentImage" class="mb-4 max90p" />
-                        <input type="file" name="albumCover" />
+                        <img src="~/Content/assets/images/students/@Model.PhotoUrl" id="studentPhoto" class="mb-4 max90p" />
+                        <input type="file" name="studentPhoto" />
                         @Html.ValidationMessageFor(model => model.PhotoUrl, "", new { @class = "text-danger" })
                     </div>
 

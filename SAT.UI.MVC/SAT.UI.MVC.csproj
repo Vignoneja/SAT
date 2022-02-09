@@ -356,7 +356,7 @@
     <Content Include="Content\assets\images\logo.png" />
     <Content Include="Content\assets\images\students\Bugs.jpg" />
     <Content Include="Content\assets\images\students\Daffy.jpg" />
-    <Content Include="Content\assets\images\students\Forhorn.jpg" />
+    <Content Include="Content\assets\images\students\Foghorn.jpg" />
     <Content Include="Content\assets\images\students\fudd.jpg" />
     <Content Include="Content\assets\images\students\Marvin.jpg" />
     <Content Include="Content\assets\images\students\noImage.jpg" />
@@ -370,7 +370,7 @@
     <Content Include="Content\assets\images\students\Tweety.jpg" />
     <Content Include="Content\assets\images\students\t_Bugs.jpg" />
     <Content Include="Content\assets\images\students\t_Daffy.jpg" />
-    <Content Include="Content\assets\images\students\t_Forhorn.jpg" />
+    <Content Include="Content\assets\images\students\t_Foghorn.jpg" />
     <Content Include="Content\assets\images\students\t_fudd.jpg" />
     <Content Include="Content\assets\images\students\t_Marvin.jpg" />
     <Content Include="Content\assets\images\students\t_noImage.jpg" />

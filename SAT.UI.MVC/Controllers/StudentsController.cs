@@ -76,7 +76,7 @@ namespace SAT.UI.MVC.Controllers
                         imageName = Guid.NewGuid() + ext;
 
                         #region Resize Image Functionality
-                        string savePath = Server.MapPath("~/Content/images/products/");
+                        string savePath = Server.MapPath("~/Content/assets/images/students/");
 
                         Image convertedImage = Image.FromStream(studentPhoto.InputStream);
 
@@ -89,7 +89,6 @@ namespace SAT.UI.MVC.Controllers
                         #endregion
 
                     }                  
-
                 }
 
                 student.PhotoUrl = imageName;
@@ -98,7 +97,8 @@ namespace SAT.UI.MVC.Controllers
 
                 db.Students.Add(student);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = student.StudentId });
             }
 
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
@@ -149,7 +149,7 @@ namespace SAT.UI.MVC.Controllers
                         imageName = Guid.NewGuid() + ext;
 
                         #region Resize Image Functionality
-                        string savePath = Server.MapPath("~/Content/images/products/");
+                        string savePath = Server.MapPath("~/Content/assets/images/students/");
 
                         Image convertedImage = Image.FromStream(studentPhoto.InputStream);
 
@@ -166,12 +166,12 @@ namespace SAT.UI.MVC.Controllers
                 }
 
                 student.PhotoUrl = imageName;
-
                 #endregion
 
                 db.Entry(student).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = student.StudentId });
             }
             ViewBag.SSID = new SelectList(db.StudentStatuses, "SSID", "SSName", student.SSID);
             return View(student);
