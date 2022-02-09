@@ -191,6 +191,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SATScript.sql" />
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\images\auth\lockscreen-bg.jpg" />
     <Content Include="Content\assets\images\auth\login-bg.jpg" />
@@ -2137,9 +2138,7 @@
     <Content Include="Views\StudentStatus\Edit.cshtml" />
     <Content Include="Views\StudentStatus\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
