@@ -5,7 +5,10 @@
 }
 
 <div class="card card-body max1000 drop">
-    <h2 class="text-center pb-4">@ViewBag.Title</h2>
+    <h2 class="text-center">@ViewBag.Title</h2>
+    <div class="text-center pb-4">
+        @Html.ActionLink("Tiled View", "IndexTiles")
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>

@@ -23,6 +23,7 @@ namespace SAT.UI.MVC
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/SiteJS").Include(
+                      "~/Content/assets/vendors/js/vendor.bundle.base.js",
                       "~/Content/assets/vendors/chart.js/Chart.min.js",
                       "~/Content/assets/vendors/progressbar.js/progressbar.min.js",
                       "~/Content/assets/vendors/jvectormap/jquery-jvectormap.min.js",
@@ -45,8 +46,7 @@ namespace SAT.UI.MVC
                       "~/Content/assets/vendors/owl-carousel-2/owl.theme.default.min.css",
                       "~/Content/assets/css/style.css",
                       "~/Content/Site.css"));
-
-
+            
         }
     }
 }
