@@ -293,6 +293,7 @@
     <Content Include="Content\assets\images\lightbox\thumb-v-y-2.jpg" />
     <Content Include="Content\assets\images\logo-mini.svg" />
     <Content Include="Content\assets\images\logo.svg" />
+    <Content Include="Content\assets\images\LogoHoriz.png" />
     <Content Include="Content\assets\images\samples\1280x768\1.jpg" />
     <Content Include="Content\assets\images\samples\1280x768\10.jpg" />
     <Content Include="Content\assets\images\samples\1280x768\11.jpg" />

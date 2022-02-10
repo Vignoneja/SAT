@@ -60,7 +60,6 @@ input[type="checkbox"].input-validation-error {
     margin-right: auto;
 }
 
-
 .max90p {
     max-width: 90%;
     height: auto;
@@ -71,6 +70,7 @@ a.btn80, input.btn80 {
     margin: 3px;
     padding: .65em;
 }
+
 
 div.inFix input, div.inFix select, div.inFix textarea, .inFix label {
     max-width: unset;
@@ -86,7 +86,69 @@ div.inFix input, div.inFix select, div.inFix textarea, .inFix label {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
+.sidebar-brand-t img {
+    position:relative;
+    max-width: 95%;
+    top: 70px;
+    height: auto;
+    margin: auto;
+    vertical-align: middle;
+}
+.navbar-brand-t img {
+    position:relative;
+    max-width: 130px;
+    top: 35px;
+    left: 35px;
+    height: auto;
+    margin: auto;
+    vertical-align: middle;
+}
 
+.navbar, .navbar.navbar-menu-wrapper{
+    z-index:0 !important;
+}
+
+.sidebar-brand.brand-logo-mini img.mini {
+    position: relative;
+    max-width: unset !important;
+    width: 120px !important;
+    top: 20px !important;
+    left: -10px;
+    height: auto !important;
+    margin: auto;
+    vertical-align: middle;
+    z-index:99;
+}
+
+.sidebar-brand-t img:hover, 
+.navbar-brand-t img:hover, 
+.sidebar-brand.brand-logo-mini img.mini:hover {
+    opacity: .5;
+}
+    
+.navbar .navbar-menu-wrapper {
+    box-shadow: unset; 
+    color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    height: 70px;
+}
+
+.navbar  {
+    height: 140px;
+}
+
+
+
+
+
+.navbar-toggler {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    font-size: 3rem !important;
+}
 
 /*----testing alt styling for more dynamic look.----*/
 .content-wrapper {
