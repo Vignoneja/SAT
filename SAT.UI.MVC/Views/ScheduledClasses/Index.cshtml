@@ -45,7 +45,16 @@
                         @Html.DisplayFor(modelItem => item.Course.CourseName)
                     </td>
                     <td class="text-center">
-                        @Html.DisplayFor(modelItem => item.ScheduledClassStatus.SCSName)
+                            @Html.DisplayFor(modelItem => item.ScheduledClassStatus.SCSName)
+                        <div class="dropdown d-inline">
+                            <div href="#" class="btn btn-inverse-primary" data-toggle="dropdown">v</div>
+                            <div class="dropdown-menu" aria-haspopup="true" aria-expanded="false">
+                                @Html.ActionLink("Active", "Delete", new { id = item.SCSID, @status = 1 }, new { @class = "dropdown-item" })
+                                @Html.ActionLink("Pending", "Delete", new { id = item.SCSID, @status = 2 }, new { @class = "dropdown-item" })
+                                @Html.ActionLink("Completed", "Delete", new { id = item.SCSID, @status = 3 }, new { @class = "dropdown-item" })
+                                @Html.ActionLink("Cancelled", "Delete", new { id = item.SCSID, @status = 4 }, new { @class = "dropdown-item" })
+                            </div>
+                        </div>
                     </td>
                     <td class="text-right">
                         @if (User.IsInRole("Admin"))

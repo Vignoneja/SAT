@@ -19,7 +19,7 @@ namespace SAT.UI.MVC.Controllers
         [Authorize(Roles = "Admin,Scheduler")]
         public ActionResult Index()
         {
-            var scheduledClasses = db.ScheduledClasses.Include(s => s.Course).Include(s => s.ScheduledClassStatus);
+            var scheduledClasses = db.ScheduledClasses.Include(s => s.Course).Include(s => s.ScheduledClassStatus);            
             return View(scheduledClasses.ToList());
         }
 
@@ -107,8 +107,9 @@ namespace SAT.UI.MVC.Controllers
 
         // GET: ScheduledClasses/Delete/5
         [Authorize(Roles = "Admin")]
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, int status)
         {
+            Session["classStatus"] = db.ScheduledClassStatuses.Find(status).SCSName.ToUpper();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -125,10 +126,11 @@ namespace SAT.UI.MVC.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int status)
         {
             ScheduledClass scheduledClass = db.ScheduledClasses.Find(id);
-            db.ScheduledClasses.Remove(scheduledClass);
+            //db.ScheduledClasses.Remove(scheduledClass);
+            scheduledClass.SCSID = status;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
