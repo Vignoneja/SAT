@@ -48,7 +48,6 @@ input[type="checkbox"].input-validation-error {
     margin-right: auto;
 }
 
-
 .max800 {
     max-width: 800px;
     margin-left: auto;
@@ -65,6 +64,10 @@ input[type="checkbox"].input-validation-error {
     height: auto;
 }
 
+.min350{
+    min-width:350px;
+}
+
 a.btn80, input.btn80 {
     min-width: 80px;
     margin: 3px;
@@ -77,6 +80,10 @@ div.inFix input, div.inFix select, div.inFix textarea, .inFix label {
     font-size: 1rem;
 }
 
+p.manage {
+    max-width: unset;
+    font-size: 1rem;
+}
 
 .table-striped td, .table-striped th {
     font-size: 1rem;
@@ -87,9 +94,9 @@ div.inFix input, div.inFix select, div.inFix textarea, .inFix label {
 }
 
 .sidebar-brand-t img {
-    position:relative;
-    max-width: 95%;
-    top: 70px;
+    position: relative;
+    max-width: 160px;
+    top: 40px;
     height: auto;
     margin: auto;
     vertical-align: middle;
@@ -98,7 +105,7 @@ div.inFix input, div.inFix select, div.inFix textarea, .inFix label {
     position:relative;
     max-width: 130px;
     top: 35px;
-    left: 35px;
+    left: 25px;
     height: auto;
     margin: auto;
     vertical-align: middle;
@@ -126,6 +133,9 @@ div.inFix input, div.inFix select, div.inFix textarea, .inFix label {
     opacity: .5;
 }
     
+
+
+
 .navbar .navbar-menu-wrapper {
     box-shadow: unset; 
     color: #ffffff;
@@ -136,12 +146,8 @@ div.inFix input, div.inFix select, div.inFix textarea, .inFix label {
 }
 
 .navbar  {
-    height: 140px;
+    height: 130px;
 }
-
-
-
-
 
 .navbar-toggler {
     position: absolute;
@@ -153,6 +159,12 @@ div.inFix input, div.inFix select, div.inFix textarea, .inFix label {
 /*----testing alt styling for more dynamic look.----*/
 .content-wrapper {
     background: #5e6d7c !important;
+    padding-top: 7em;
+    display: unset;
+}
+
+.page-body-wrapper {
+    min-height: calc(100vh - 100px);
 }
 
 .drop{
