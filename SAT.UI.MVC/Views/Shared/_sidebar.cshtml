@@ -1,18 +1,46 @@
+@using Microsoft.AspNet.Identity
+
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         <a class="sidebar-brand-t brand-logo" href="@Url.Action("Index", "Home")"><img src="~/Content/assets/images/Logo.png" alt="logo" /></a>
-         <a class="sidebar-brand brand-logo-mini" href="@Url.Action("Index", "Home")"><img src="~/Content/assets/images/Logo.png" alt="logo" class="mini" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="@Url.Action("Index", "Home")"><img src="~/Content/assets/images/Logo.png" alt="logo" class="mini" /></a>
     </div>
-    <ul class="nav">
-        <li class="nav-item profile">
-            <div class="profile-desc">
-                <div class="profile-pic">
-                    <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">@Html.Partial("_LoginPartial")</h5>
-                    </div>
-                </div>
-            </div>
-        </li>
+    <ul class="nav mt-5">
+        @if (Request.IsAuthenticated)
+        {
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="@Url.Action("Index","Manage")">
+                        <span class="menu-icon"><i class="mdi mdi-settings"></i></span>
+                        <span class="menu-title">Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" ref="javascript:document.getElementById('logoutForm').submit()">
+                        <span class="menu-icon"><i class="mdi mdi-logout"></i></span>
+                        <span class="menu-title">Log Off</span>
+                    </a>
+                </li>
+            }
+        }
+        else
+        {
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="@Url.Action("Register","Account")">
+                    <span class="menu-icon"><i class="mdi mdi-account-plus"></i></span>
+                    <span class="menu-title">Register</span>
+                </a>
+            </li>
+            <li class="nav-item menu-items">
+                <a class="nav-link" href="@Url.Action("Login","Account")">
+                    <span class="menu-icon"><i class="mdi mdi-login"></i></span>
+                    <span class="menu-title">Login</span>
+                </a>
+            </li>
+        }
         <li class="nav-item nav-category">
         </li>
         <li class="nav-item menu-items">
@@ -64,20 +92,21 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="@Url.Action("About", "Home")">
                 <span class="menu-icon">
-                    <i class="mdi mdi-file-document-box"></i>
+                    <i class="mdi mdi-security"></i>
                 </span>
-                <span class="menu-title" style="color:#6c7293">Documentation</span>
-                <i class="menu-arrow"></i>
+                <span class="menu-title">Documentation</span>
             </a>
-            <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                    @* this will need updated once the documentation is completed *@
-                    <li class="nav-item"> <a class="nav-link" style="color:#6c7293" href="@Url.Action("Documentation", "About")">Documentation</a></li>
-                    <li class="nav-item"> <a class="nav-link" style="color:#6c7293" href="~/Content/assets/SAT_Documentation.pdf" download>Download Documentation</a></li>
-                </ul>
-            </div>
         </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="~/Content/assets/Documentation_SAT.pdf" download>
+                <span class="menu-icon">
+                    <i class="mdi mdi-security"></i>
+                </span>
+                <span class="menu-title">Download Documentation</span>
+            </a>
+        </li>
+
     </ul>
 </nav>

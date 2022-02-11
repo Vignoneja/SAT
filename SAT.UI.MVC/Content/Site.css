@@ -96,9 +96,9 @@ p.manage {
 .sidebar-brand-t img {
     position: relative;
     max-width: 160px;
-    top: 40px;
+    top: 0px;
+    left: -10px;
     height: auto;
-    margin: auto;
     vertical-align: middle;
 }
 .navbar-brand-t img {
@@ -112,14 +112,18 @@ p.manage {
 }
 
 .navbar, .navbar.navbar-menu-wrapper{
-    z-index:0 !important;
+    z-index:10 !important;
+}
+
+ul.nav {
+    position: fixed;
 }
 
 .sidebar-brand.brand-logo-mini img.mini {
     position: relative;
     max-width: unset !important;
     width: 120px !important;
-    top: 20px !important;
+    top: 0px !important;
     left: -10px;
     height: auto !important;
     margin: auto;
@@ -132,8 +136,11 @@ p.manage {
 .sidebar-brand.brand-logo-mini img.mini:hover {
     opacity: .5;
 }
-    
 
+
+.sidebar .sidebar-brand-wrapper {
+    height: 130px !important;
+}
 
 
 .navbar .navbar-menu-wrapper {
@@ -160,7 +167,7 @@ p.manage {
 .content-wrapper {
     background: #5e6d7c !important;
     padding-top: 7em;
-    display: unset;
+
 }
 
 .page-body-wrapper {

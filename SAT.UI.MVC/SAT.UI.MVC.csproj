@@ -1018,6 +1018,7 @@
     <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\Courses\Active.cshtml" />
     <Content Include="Views\Courses\Retired.cshtml" />
+    <Content Include="Content\assets\Documentation_SAT.pdf" />
     <None Include="Views\Shared\_footer.cshtml" />
     <None Include="Views\Shared\_navbar.cshtml" />
     <None Include="Views\Shared\_sidebar.cshtml" />
@@ -1977,7 +1978,6 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
     <Content Include="Views\UsersAdmin\Edit.cshtml" />
     <Content Include="Views\UsersAdmin\Details.cshtml" />
