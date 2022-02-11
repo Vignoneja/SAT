@@ -192,7 +192,6 @@
     <Compile Include="Utilities\ImageUtility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\SATScript.sql" />
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\images\auth\lockscreen-bg.jpg" />
     <Content Include="Content\assets\images\auth\login-bg.jpg" />
@@ -1019,6 +1018,7 @@
     <Content Include="Views\Courses\Active.cshtml" />
     <Content Include="Views\Courses\Retired.cshtml" />
     <Content Include="Content\assets\Documentation_SAT.pdf" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Views\Shared\_footer.cshtml" />
     <None Include="Views\Shared\_navbar.cshtml" />
     <None Include="Views\Shared\_sidebar.cshtml" />
@@ -2137,7 +2137,9 @@
     <Content Include="Views\StudentStatus\Index.cshtml" />
     <Content Include="Views\StudentStatus\IndexTiles.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

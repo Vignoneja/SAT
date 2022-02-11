@@ -1,111 +1,3 @@
-/*-------------------------------------------------------------------
-  ===== Table of Contents =====
-
-  * Bootstrap functions
-  * Template variables
-  * SCSS Compass Functions
-  * Boostrap Main SCSS
-  * Template mixins
-    + Animation Mixins
-    + Background Mixins
-    + Badge Mixins
-    + Button Mixins
-    + Miscellaneous Mixins
-    + BlockQuote Mixins
-    + Cards Mixins
-    + Color Functions Mixins
-    + Tooltips
-    + popovers
-  * Core Styles
-    + Reset Styles
-    + Fonts
-    + Functions
-    + Backgrounds
-    + Typography
-    + Miscellaneous
-    + Footer
-    + Layouts
-    + Utilities
-    + Demo styles
-  * Components
-    + Accordions
-    + Badges
-    + Bootstrap Alerts
-    + Boostrap Progress
-    + Buttons
-    + Breadcrumbs
-    + Cards
-    + Checkboxes and Radios
-    + Dropdowns
-    + Forms
-    + Google maps
-    + Icons
-    + Loaders
-    + Lists
-    + Modals
-    + Pagination
-    + Popover
-    + Preview
-    + Tables
-    + Tabs
-    + Timeline
-    + Todo List
-    + Tooltips
-    + User Profile
-    + Pricing table
-  * Email
-    + Mail Sidebar
-    + Mail List Container
-    + Message Content
-  * Plugin Overrides
-    + Ace Editor
-    + Avgrund Popup
-    + Bootstrap Tour
-    + Chartist
-    + CodeMirror
-    + Colcade
-    + Colorpicker
-    + Context Menu
-    + Data Tables
-    + Datepicker
-    + Dropify
-    + Dropzone
-    + Flot chart
-    + Full Calendar
-    + Google Charts
-    + Icheck
-    + Jquery File Upload
-    + Js-grid
-    + Jvectormap
-    + Light Gallery
-    + Listify
-    + No-ui-slider
-    + Owl-carousel
-    + Progressbar-js
-    + Pws-tabs
-    + Quill Editor
-    + Rating
-    + Select2
-    + Summernote Editor
-    + SweetAlert
-    + Switchery
-    + Tags
-    + TinyMCE Editor
-    + Toast
-    + Typeahead
-    + Wysi Editor
-    + X-editable
-    + Wizard
-  * Landing screens
-    + Auth
-    + Lock Screen
--------------------------------------------------------------------*/
-/*-------------------------------------------------------------------*/
-/* === Import Bootstrap functions and variables === */
-/*-------------------------------------------------------------------*/
-/* === Import template variables === */
-/*-------------------------------------------------------------------*/
-/* === SCSS Compass Functions === */
 @-moz-keyframes flash {
   0% {
     opacity: 1; }
@@ -7421,14 +7313,6 @@
     -o-transform: translateX(-100%) rotate(-120deg);
     transform: translateX(-100%) rotate(-120deg); } }
 
-/*-------------------------------------------------------------------*/
-/* === Boostrap Main SCSS === */
-/*!
- * Bootstrap v4.5.3 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
   --blue: #5E50F9;
   --indigo: #6610f2;
@@ -15300,16 +15184,12 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #2c2e33; } }
 
-/*-------------------------------------------------------------------*/
-/* === Template mixins === */
-/* Miscellaneous Mixins */
 .list-wrapper ul li .form-check, .list-wrapper ul li .form-check .form-check-label {
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: 100%;
   white-space: nowrap; }
 
-/* Animation Mixins */
 @keyframes dropdownAnimation {
   from {
     opacity: 0;
@@ -15364,9 +15244,6 @@ a.text-dark:hover, a.text-dark:focus {
 .fadeInUp {
   animation-name: fadeInUp; }
 
-/*-------------------------------------------------------------------*/
-/* === Core Styles === */
-/* Reset Styles */
 body {
   padding: 0;
   margin: 0;
@@ -15521,32 +15398,32 @@ input:focus {
   border-color: transparent;
   outline: none; }
 
-/* Fonts */
+
 @font-face {
   font-family: 'Rubik';
   font-weight: 300;
-  src: url("../fonts/Rubik/Rubik-Light.ttf");
-  /* IE9 Compat Modes */ }
+  src: url("/Content/assets/fonts/Rubik/Rubik-Light.ttf");
+}
 
 @font-face {
   font-family: 'Rubik';
   font-weight: 400;
-  src: url("../fonts/Rubik/Rubik-Regular.ttf");
-  /* IE9 Compat Modes */ }
+  src: url("/Content/assets/fonts/Rubik/Rubik-Regular.ttf");
+}
 
 @font-face {
   font-family: 'Rubik';
   font-weight: 500;
-  src: url("../fonts/Rubik/Rubik-Medium.ttf");
-  /* IE9 Compat Modes */ }
+  src: url("/Content/assets/fonts/Rubik/Rubik-Medium.ttf");
+}
 
 @font-face {
   font-family: 'Rubik';
   font-weight: 700;
-  src: url("../fonts/Rubik/Rubik-Bold.ttf");
-  /* IE9 Compat Modes */ }
+  src: url("Content/assets/fonts/Rubik/Rubik-Bold.ttf");
+}
 
-/* Backgrounds  */
+
 .bg-gradient-primary {
   background: #0090e7; }
 
@@ -15582,7 +15459,7 @@ input:focus {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a008a', endColorstr='#fa0053', GradientType=0 );
   color: #ffffff; }
 
-/* Typography */
+
 body {
   font-size: 1rem;
   font-weight: normal;
@@ -15711,7 +15588,6 @@ address p {
 .icon-sm {
   font-size: 1rem; }
 
-/* Miscellanoeous */
 body,
 html {
   overflow-x: hidden;
@@ -15759,7 +15635,7 @@ code {
       font-size: .9375rem;
       line-height: 36px; }
 
-/* Footer */
+
 .footer {
   background: #000000;
   padding: 20px 1rem;
@@ -15777,7 +15653,7 @@ code {
       margin-left: 0;
       width: 100%; } }
 
-/* Utilities */
+
 .grid-margin {
   margin-bottom: 1.5rem; }
 
@@ -15905,7 +15781,7 @@ code {
 .text-reddit {
   color: #ff4500; }
 
-/* Demo Styles */
+
 .template-demo .slider-wrap {
   height: 100px; }
 
@@ -15991,9 +15867,7 @@ code {
 .rounded-legend.legend-vertical ul li {
   margin-top: 1rem; }
 
-/*-------------------------------------------------------------------*/
-/* === Components === */
-/* Badges */
+
 .badge {
   border-radius: 0.25rem;
   font-size: 0.75rem;
@@ -16004,7 +15878,6 @@ code {
   .badge.badge-pill {
     border-radius: 10rem; }
 
-/*Badge variations*/
 .badge-primary {
   background: #0090e7;
   color: #ffffff; }
@@ -16037,7 +15910,7 @@ code {
   background: #0d0d0d;
   color: #ffffff; }
 
-/*Badge outlined variations*/
+
 .badge-outline-primary {
   color: #0090e7;
   border: 1px solid #0090e7; }
@@ -16070,13 +15943,12 @@ code {
   color: #0d0d0d;
   border: 1px solid #0d0d0d; }
 
-/* Buttons */
+
 .btn, .fc button, .ajax-upload-dragdrop .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-confirm, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel, .wizard > .actions a {
   font-size: 0.9375rem;
   line-height: 1;
   font-weight: normal;
-  /* Buttons with only icons */
-  /* Buttons with icon and text */ }
+}
   .btn i, .fc button i, .ajax-upload-dragdrop .ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .swal2-styled i, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-confirm i, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel i, .wizard > .actions a i {
     margin-right: .3125rem; }
   .btn.btn-rounded, .fc button.btn-rounded, .ajax-upload-dragdrop .btn-rounded.ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-rounded.swal2-styled, .wizard > .actions a.btn-rounded {
@@ -16115,7 +15987,7 @@ code {
 .btn-group .btn + .btn, .fc .fc-button-group .btn + .btn, .btn-group .fc button + .btn, .fc .btn-group button + .btn, .fc .fc-button-group button + .btn, .btn-group .ajax-upload-dragdrop .ajax-file-upload + .btn, .ajax-upload-dragdrop .btn-group .ajax-file-upload + .btn, .fc .fc-button-group .ajax-upload-dragdrop .ajax-file-upload + .btn, .ajax-upload-dragdrop .fc .fc-button-group .ajax-file-upload + .btn, .btn-group .swal2-modal .swal2-buttonswrapper .swal2-styled + .btn, .swal2-modal .swal2-buttonswrapper .btn-group .swal2-styled + .btn, .fc .fc-button-group .swal2-modal .swal2-buttonswrapper .swal2-styled + .btn, .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .swal2-styled + .btn, .btn-group .wizard > .actions a + .btn, .wizard > .actions .btn-group a + .btn, .fc .fc-button-group .wizard > .actions a + .btn, .wizard > .actions .fc .fc-button-group a + .btn, .btn-group .fc .btn + button, .fc .btn-group .btn + button, .fc .fc-button-group .btn + button, .btn-group .fc button + button, .fc .btn-group button + button, .fc .fc-button-group button + button, .btn-group .ajax-upload-dragdrop .fc .ajax-file-upload + button, .fc .btn-group .ajax-upload-dragdrop .ajax-file-upload + button, .ajax-upload-dragdrop .btn-group .fc .ajax-file-upload + button, .fc .ajax-upload-dragdrop .btn-group .ajax-file-upload + button, .fc .fc-button-group .ajax-upload-dragdrop .ajax-file-upload + button, .ajax-upload-dragdrop .fc .fc-button-group .ajax-file-upload + button, .btn-group .swal2-modal .swal2-buttonswrapper .fc .swal2-styled + button, .fc .btn-group .swal2-modal .swal2-buttonswrapper .swal2-styled + button, .swal2-modal .swal2-buttonswrapper .btn-group .fc .swal2-styled + button, .fc .swal2-modal .swal2-buttonswrapper .btn-group .swal2-styled + button, .fc .fc-button-group .swal2-modal .swal2-buttonswrapper .swal2-styled + button, .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .swal2-styled + button, .btn-group .wizard > .actions .fc a + button, .fc .btn-group .wizard > .actions a + button, .wizard > .actions .btn-group .fc a + button, .fc .wizard > .actions .btn-group a + button, .fc .fc-button-group .wizard > .actions a + button, .wizard > .actions .fc .fc-button-group a + button, .btn-group .ajax-upload-dragdrop .btn + .ajax-file-upload, .ajax-upload-dragdrop .btn-group .btn + .ajax-file-upload, .fc .fc-button-group .ajax-upload-dragdrop .btn + .ajax-file-upload, .ajax-upload-dragdrop .fc .fc-button-group .btn + .ajax-file-upload, .btn-group .fc .ajax-upload-dragdrop button + .ajax-file-upload, .ajax-upload-dragdrop .btn-group .fc button + .ajax-file-upload, .fc .btn-group .ajax-upload-dragdrop button + .ajax-file-upload, .ajax-upload-dragdrop .fc .btn-group button + .ajax-file-upload, .fc .fc-button-group .ajax-upload-dragdrop button + .ajax-file-upload, .ajax-upload-dragdrop .fc .fc-button-group button + .ajax-file-upload, .btn-group .ajax-upload-dragdrop .ajax-file-upload + .ajax-file-upload, .ajax-upload-dragdrop .btn-group .ajax-file-upload + .ajax-file-upload, .fc .fc-button-group .ajax-upload-dragdrop .ajax-file-upload + .ajax-file-upload, .ajax-upload-dragdrop .fc .fc-button-group .ajax-file-upload + .ajax-file-upload, .btn-group .swal2-modal .swal2-buttonswrapper .ajax-upload-dragdrop .swal2-styled + .ajax-file-upload, .ajax-upload-dragdrop .btn-group .swal2-modal .swal2-buttonswrapper .swal2-styled + .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-group .ajax-upload-dragdrop .swal2-styled + .ajax-file-upload, .ajax-upload-dragdrop .swal2-modal .swal2-buttonswrapper .btn-group .swal2-styled + .ajax-file-upload, .fc .fc-button-group .swal2-modal .swal2-buttonswrapper .ajax-upload-dragdrop .swal2-styled + .ajax-file-upload, .ajax-upload-dragdrop .fc .fc-button-group .swal2-modal .swal2-buttonswrapper .swal2-styled + .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .ajax-upload-dragdrop .swal2-styled + .ajax-file-upload, .ajax-upload-dragdrop .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .swal2-styled + .ajax-file-upload, .btn-group .wizard > .actions .ajax-upload-dragdrop a + .ajax-file-upload, .ajax-upload-dragdrop .btn-group .wizard > .actions a + .ajax-file-upload, .wizard > .actions .btn-group .ajax-upload-dragdrop a + .ajax-file-upload, .ajax-upload-dragdrop .wizard > .actions .btn-group a + .ajax-file-upload, .fc .fc-button-group .wizard > .actions .ajax-upload-dragdrop a + .ajax-file-upload, .ajax-upload-dragdrop .fc .fc-button-group .wizard > .actions a + .ajax-file-upload, .wizard > .actions .fc .fc-button-group .ajax-upload-dragdrop a + .ajax-file-upload, .ajax-upload-dragdrop .wizard > .actions .fc .fc-button-group a + .ajax-file-upload, .btn-group .swal2-modal .swal2-buttonswrapper .btn + .swal2-styled, .swal2-modal .swal2-buttonswrapper .btn-group .btn + .swal2-styled, .fc .fc-button-group .swal2-modal .swal2-buttonswrapper .btn + .swal2-styled, .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .btn + .swal2-styled, .btn-group .fc .swal2-modal .swal2-buttonswrapper button + .swal2-styled, .swal2-modal .swal2-buttonswrapper .btn-group .fc button + .swal2-styled, .fc .btn-group .swal2-modal .swal2-buttonswrapper button + .swal2-styled, .swal2-modal .swal2-buttonswrapper .fc .btn-group button + .swal2-styled, .fc .fc-button-group .swal2-modal .swal2-buttonswrapper button + .swal2-styled, .swal2-modal .swal2-buttonswrapper .fc .fc-button-group button + .swal2-styled, .btn-group .ajax-upload-dragdrop .swal2-modal .swal2-buttonswrapper .ajax-file-upload + .swal2-styled, .swal2-modal .swal2-buttonswrapper .btn-group .ajax-upload-dragdrop .ajax-file-upload + .swal2-styled, .ajax-upload-dragdrop .btn-group .swal2-modal .swal2-buttonswrapper .ajax-file-upload + .swal2-styled, .swal2-modal .swal2-buttonswrapper .ajax-upload-dragdrop .btn-group .ajax-file-upload + .swal2-styled, .fc .fc-button-group .ajax-upload-dragdrop .swal2-modal .swal2-buttonswrapper .ajax-file-upload + .swal2-styled, .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .ajax-upload-dragdrop .ajax-file-upload + .swal2-styled, .ajax-upload-dragdrop .fc .fc-button-group .swal2-modal .swal2-buttonswrapper .ajax-file-upload + .swal2-styled, .swal2-modal .swal2-buttonswrapper .ajax-upload-dragdrop .fc .fc-button-group .ajax-file-upload + .swal2-styled, .btn-group .swal2-modal .swal2-buttonswrapper .swal2-styled + .swal2-styled, .swal2-modal .swal2-buttonswrapper .btn-group .swal2-styled + .swal2-styled, .fc .fc-button-group .swal2-modal .swal2-buttonswrapper .swal2-styled + .swal2-styled, .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .swal2-styled + .swal2-styled, .btn-group .wizard > .actions .swal2-modal .swal2-buttonswrapper a + .swal2-styled, .swal2-modal .swal2-buttonswrapper .btn-group .wizard > .actions a + .swal2-styled, .wizard > .actions .btn-group .swal2-modal .swal2-buttonswrapper a + .swal2-styled, .swal2-modal .swal2-buttonswrapper .wizard > .actions .btn-group a + .swal2-styled, .fc .fc-button-group .wizard > .actions .swal2-modal .swal2-buttonswrapper a + .swal2-styled, .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .wizard > .actions a + .swal2-styled, .wizard > .actions .fc .fc-button-group .swal2-modal .swal2-buttonswrapper a + .swal2-styled, .swal2-modal .swal2-buttonswrapper .wizard > .actions .fc .fc-button-group a + .swal2-styled, .btn-group .wizard > .actions .btn + a, .wizard > .actions .btn-group .btn + a, .fc .fc-button-group .wizard > .actions .btn + a, .wizard > .actions .fc .fc-button-group .btn + a, .btn-group .fc .wizard > .actions button + a, .wizard > .actions .btn-group .fc button + a, .fc .btn-group .wizard > .actions button + a, .wizard > .actions .fc .btn-group button + a, .fc .fc-button-group .wizard > .actions button + a, .wizard > .actions .fc .fc-button-group button + a, .btn-group .ajax-upload-dragdrop .wizard > .actions .ajax-file-upload + a, .wizard > .actions .btn-group .ajax-upload-dragdrop .ajax-file-upload + a, .ajax-upload-dragdrop .btn-group .wizard > .actions .ajax-file-upload + a, .wizard > .actions .ajax-upload-dragdrop .btn-group .ajax-file-upload + a, .fc .fc-button-group .ajax-upload-dragdrop .wizard > .actions .ajax-file-upload + a, .wizard > .actions .fc .fc-button-group .ajax-upload-dragdrop .ajax-file-upload + a, .ajax-upload-dragdrop .fc .fc-button-group .wizard > .actions .ajax-file-upload + a, .wizard > .actions .ajax-upload-dragdrop .fc .fc-button-group .ajax-file-upload + a, .btn-group .swal2-modal .swal2-buttonswrapper .wizard > .actions .swal2-styled + a, .wizard > .actions .btn-group .swal2-modal .swal2-buttonswrapper .swal2-styled + a, .swal2-modal .swal2-buttonswrapper .btn-group .wizard > .actions .swal2-styled + a, .wizard > .actions .swal2-modal .swal2-buttonswrapper .btn-group .swal2-styled + a, .fc .fc-button-group .swal2-modal .swal2-buttonswrapper .wizard > .actions .swal2-styled + a, .wizard > .actions .fc .fc-button-group .swal2-modal .swal2-buttonswrapper .swal2-styled + a, .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .wizard > .actions .swal2-styled + a, .wizard > .actions .swal2-modal .swal2-buttonswrapper .fc .fc-button-group .swal2-styled + a, .btn-group .wizard > .actions a + a, .wizard > .actions .btn-group a + a, .fc .fc-button-group .wizard > .actions a + a, .wizard > .actions .fc .fc-button-group a + a {
   border-left: 0; }
 
-/*social buttons*/
+
 .btn-twitter {
   background: #2caae1;
   color: #ffffff; }
@@ -16336,7 +16208,7 @@ code {
     background: #ff4500;
     color: #ffffff; }
 
-/* inverse buttons */
+
 .btn-inverse-primary {
   background-color: rgba(0, 144, 231, 0.2);
   background-image: none;
@@ -16569,7 +16441,7 @@ code {
     background: #0d0d0d;
     border-color: #0d0d0d; }
 
-/* Cards */
+
 .card {
   border-radius: 0.25rem; }
   .card .card-body {
@@ -16664,7 +16536,7 @@ code {
   border: 1px solid #0c0c0c;
   color: #0a0a0a; }
 
-/* Checkboxes and Radios */
+
 .form-check {
   position: relative;
   display: block;
@@ -16892,7 +16764,6 @@ code {
 .form-check-muted.form-check label input[type="radio"]:checked + .input-helper:before {
   background: #6c7293; }
 
-/* Dropdowns */
 .dropdown .dropdown-menu {
   margin-top: .75rem;
   font-size: 0.875rem;
@@ -16903,7 +16774,7 @@ code {
     .dropdown .dropdown-menu .dropdown-item:active {
       background: initial; }
 
-/* Forms */
+
 .form-group {
   margin-bottom: 1rem; }
 
@@ -20195,20 +20066,23 @@ div.tagsinput {
 /* === Landing screens === */
 /* Auth */
 .auth.login-bg {
-  background: url("../images/auth/Login_bg.jpg");
+  background: url("/Content/assets/images/auth/Login_bg.jpg");
   background-size: cover; }
 
 .auth .login-half-bg {
-  background: url("../images/auth/login-bg.jpg");
-  background-size: cover; }
+    background: url("/Content/assets/images/auth/login-bg.jpg");
+    background-size: cover;
+}
 
 .auth.register-half-bg {
-  background: url("../images/auth/Login_bg2.jpg");
-  background-size: cover; }
+    background: url("/Content/assets/images/auth/Login_bg2.jpg");
+    background-size: cover;
+}
 
 .auth.lock-full-bg {
-  background: url("../images/auth/lockscreen-bg.jpg");
-  background-size: cover; }
+    background: url("/Content/assets/images/auth/lockscreen-bg.jpg");
+    background-size: cover;
+}
 
 .auth .lock-profile-img {
   width: 90px;
