@@ -1,7 +1,7 @@
 ﻿@model SAT.DATA.EF.Course
 
 @{
-    ViewBag.Title = "Delete: " + Model.CourseName;
+    ViewBag.Title = "Retire: " + Model.CourseName;
 }
 
 <div class="card card-body max800 drop">
@@ -36,7 +36,7 @@
             }
         </dl>
     </div>
-    <h3 class="text-center text-danger  pb-4">Are you sure you want to delete: <span class="font-italic"> @Model.CourseName</span>?</h3>
+    <h3 class="text-center text-danger  pb-4">Are you sure you want to retire: <span class="font-italic"> @Model.CourseName</span>?</h3>
 
     @using (Html.BeginForm())
     {

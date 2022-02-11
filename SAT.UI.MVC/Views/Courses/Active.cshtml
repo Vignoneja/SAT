@@ -6,7 +6,7 @@
 
 <div class="card card-body max1000 drop">
     <h2 class="text-center">@ViewBag.Title</h2>
-    <div class="text-center pb-4">@Html.ActionLink("View Inactive", "Retired")</div>
+    <div class="text-center pb-4">@Html.ActionLink("View Retired", "Retired")</div>
 
     <table class="table table-striped">
         <thead>
@@ -38,7 +38,7 @@
                     <td class="text-right">
                         @if (User.IsInRole("Admin"))
                         {
-                            @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+                            @Html.ActionLink("Retire", "Delete", new { id = item.CourseId })
                             <span>|</span>
                             @Html.ActionLink("Edit", "Edit", new { id = item.CourseId })
                             <span>|</span>

@@ -20,7 +20,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Course.CourseName)
                 </th>
-                <th>
+                <th class="text-center">
                     @Html.DisplayNameFor(model => model.ScheduledClassStatus.SCSName)
                 </th>
 
@@ -46,27 +46,31 @@
                         @Html.DisplayFor(modelItem => item.Course.CourseName)
                     </td>
 
-                    <td>
-                        <div class="dropdown d-inline">
-                            <div href="#" class="btn btn-outline-primary btn-fw dropdown-toggle" data-toggle="dropdown">
-                                @* dropdown-toggle adds the down arrow *@
-                                @Html.DisplayFor(modelItem => item.ScheduledClassStatus.SCSName)
+                    <td class="text-center">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="dropdown d-inline">
+                                <div href="#" class="btn btn-outline-primary btn-fw dropdown-toggle" data-toggle="dropdown">
+                                    @* dropdown-toggle adds the down arrow *@
+                                    @Html.DisplayFor(modelItem => item.ScheduledClassStatus.SCSName)
+                                </div>
+
+                                <div class="dropdown-menu" aria-haspopup="true" aria-expanded="false">
+                                    @Html.ActionLink("Active", "Delete", new { id = item.ScheduledClassId, @status = 1 }, new { @class = "dropdown-item text-white" })
+                                    @Html.ActionLink("Pending", "Delete", new { id = item.ScheduledClassId, @status = 2 }, new { @class = "dropdown-item text-white" })
+                                    @Html.ActionLink("Completed", "Delete", new { id = item.ScheduledClassId, @status = 3 }, new { @class = "dropdown-item text-white" })
+                                    @Html.ActionLink("Cancelled", "Delete", new { id = item.ScheduledClassId, @status = 4 }, new { @class = "dropdown-item text-white" })
+                                </div>
                             </div>
-                            <div class="dropdown-menu" aria-haspopup="true" aria-expanded="false">
-                                @Html.ActionLink("Active", "Delete", new { id = item.ScheduledClassId, @status = 1 }, new { @class = "dropdown-item text-white" })
-                                @Html.ActionLink("Pending", "Delete", new { id = item.ScheduledClassId, @status = 2 }, new { @class = "dropdown-item text-white" })
-                                @Html.ActionLink("Completed", "Delete", new { id = item.ScheduledClassId, @status = 3 }, new { @class = "dropdown-item text-white" })
-                                @Html.ActionLink("Cancelled", "Delete", new { id = item.ScheduledClassId, @status = 4 }, new { @class = "dropdown-item text-white" })
-                            </div>
-                        </div>
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(modelItem => item.ScheduledClassStatus.SCSName)
+                        }
                     </td>
 
                     <td class="text-right">
-                        @if (User.IsInRole("Admin"))
-                        {
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ScheduledClassId })
-                            <span>|</span>
-                        }
+
                         @Html.ActionLink("Edit", "Edit", new { id = item.ScheduledClassId }) <span>|</span>
                         @Html.ActionLink("Details", "Details", new { id = item.ScheduledClassId })
                     </td>
