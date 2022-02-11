@@ -45,7 +45,7 @@
             @if (User.IsInRole("Admin"))
             {
                 @Html.ActionLink("Edit", "Edit", "Students", new { id = Model.StudentId }, new { @class = "btn btn-primary btn80" })
-                @Html.ActionLink("Delete", "Delete", "Students", new { id = Model.StudentId }, new { @class = "btn btn-primary btn80 ml-2" })
+                @Html.ActionLink("Withdraw", "Delete", "Students", new { id = Model.StudentId }, new { @class = "btn btn-primary btn80 ml-2" })
             }
             @*@Html.ActionLink("Return", "Index", "Students", new { @class = "btn btn-primary btn80" })*@
             <a href="javascript:void(0);" onclick="history.go(-1);" class="btn btn-primary btn80 mr-0">Return</a>

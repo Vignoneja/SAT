@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Details: " + Model.CourseName;
+    string btnText = Model.IsActive ? "Retire" : "Activate";
 }
 
 
@@ -40,7 +41,8 @@
         @if (User.IsInRole("Admin"))
         {
             @Html.ActionLink("Edit", "Edit", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80" })
-            @Html.ActionLink("Delete", "Delete", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80 ml-2" })
+
+            @Html.ActionLink(btnText, "Delete", new { id = Model.CourseId }, new { @class = "btn btn-primary btn80 ml-2" })
         }
         @*@Html.ActionLink("Return", "Index", "Courses", new { @class = "btn btn-primary btn80" })*@
         <a href="javascript:void(0);" onclick="history.go(-1);" class="btn btn-primary btn80 mr-0">Return</a>

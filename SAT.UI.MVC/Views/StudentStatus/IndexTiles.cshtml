@@ -20,9 +20,11 @@
             {
                 <div class="grid-margin d-flex col-lg-6 text-center">
                     <div class="card card-body drop">
-                        <a href="@Url.Action("Details", new { id=item.SSID })" class="text-muted text-center">
-                            @Html.DisplayFor(modelItem => item.SSName)
-                        </a>
+                        <h4 class="card-header">
+                            <a href="@Url.Action("Details", new { id=item.SSID })" class="text-muted text-center">
+                                @Html.DisplayFor(modelItem => item.SSName)
+                            </a>
+                        </h4>
                         <span></span>
                         @Html.DisplayNameFor(model => model.SSDescription)
                         @Html.DisplayFor(modelItem => item.SSDescription)
