@@ -36,7 +36,16 @@
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(model => model.SCSID, "Class Status", htmlAttributes: new { @class = "control-label" })
-                        @Html.DropDownList("SCSID", null, htmlAttributes: new { @class = "form-control" })
+                        @if (User.IsInRole("Admin"))
+                        {
+
+                            @Html.DropDownList("SCSID", null, htmlAttributes: new { @class = "form-control" })
+                        }
+                        else
+                        {
+                            @Html.DropDownList("SCSID", null, htmlAttributes: new { @class = "form-control", @disabled = "disabled" })
+                            @Html.HiddenFor(model => model.SCSID)
+                        }
                         @Html.ValidationMessageFor(model => model.SCSID, "", new { @class = "text-danger" })
                     </div>
                 </div>
